@@ -21,7 +21,6 @@
 
 body {
     background-color: #242427;
-    transition: .3s ease-in-out;
 }
 
 .header {
@@ -97,7 +96,22 @@ body {
 #main-img {
     position: relative;
     z-index: 2;
+    animation: updown 4s linear infinite;
 }
+@keyframes updown {
+    0% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+
+
 
 #dots {
     position: relative;
@@ -149,9 +163,14 @@ body {
     font-style: normal;
     font-weight: 200;
     line-height: normal;
-
+    transition: .3s ease-in-out;
+    background-size: 200% 100%; /* Увеличение размера фона вдвое для анимации */
+    transition: background-position 0.5s;
 }
-
+#showroom-btn:hover {
+    background-position: right; 
+    background: #003ACE;
+}
 #txt20 {
     position: absolute;
     top: -40px;
